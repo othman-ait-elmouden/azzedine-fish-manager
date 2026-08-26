@@ -1,2 +1,214 @@
-# azzedine-fish-manager
-A professional Arabic desktop application for managing fish shops, built with Python, CustomTkinter, SQLite, and ReportLab. Includes customer management, invoices, fish purchases, sales tracking, reports, and customizable fish types and settings.
+# 🐟 Azzedine Fish Manager
+
+**Azzedine Fish Manager** هو برنامج مكتبي احترافي باللغة العربية لإدارة محلات بيع الأسماك، تم تطويره باستخدام **Python** و **CustomTkinter** مع قاعدة بيانات **SQLite**.
+
+البرنامج مصمم لتسهيل إدارة المبيعات، المشتريات، الفواتير، الزبائن والتقارير اليومية من واجهة عربية بسيطة وسريعة.
+
+---
+
+## ✨ المميزات
+
+* 🏠 لوحة رئيسية لعرض ملخص نشاط المحل
+* 🧾 إنشاء وإدارة فواتير البيع
+* 📥 تسجيل دخول الأسماك والبضائع يوميًا
+* ⚖️ دعم البيع بالكيلوغرام والقطعة
+* 🐟 اختيار أنواع الأسماك بسرعة أثناء إدخال الفاتورة
+* ⚙️ إمكانية إضافة وتعديل أنواع الأسماك من الإعدادات
+* 👥 إدارة الزبائن
+* 📂 عرض جميع فواتير كل زبون
+* 💰 حساب إجمالي المبيعات
+* 📊 تقارير يومية وشهرية
+* 🖨️ إنشاء وطباعة الفواتير بصيغة PDF
+* 🔎 البحث في الفواتير والزبائن
+* 💾 تخزين البيانات محليًا باستخدام SQLite
+* 🇲🇦 واجهة عربية مناسبة لمحلات الأسماك
+
+---
+
+## 🛠️ التقنيات المستخدمة
+
+* **Python 3.13**
+* **CustomTkinter**
+* **SQLite**
+* **ReportLab**
+* **Pillow**
+
+---
+
+## 📁 هيكل المشروع
+
+```text
+azzedine-fish-manager/
+│
+├── main.py
+├── requirements.txt
+├── README.md
+│
+├── assets/
+│   ├── logo.png
+│   └── icons/
+│
+├── database/
+│   └── fishstore.db
+│
+├── pages/
+│   ├── dashboard.py
+│   ├── purchases.py
+│   ├── invoices.py
+│   ├── customers.py
+│   ├── reports.py
+│   └── settings.py
+│
+├── services/
+│   ├── database.py
+│   ├── invoice_service.py
+│   └── pdf_service.py
+│
+└── utils/
+    └── helpers.py
+```
+
+---
+
+## 🚀 التثبيت والتشغيل
+
+### 1. تحميل المشروع
+
+```bash
+git clone https://github.com/othman-ait-elmouden/azzedine-fish-manager.git
+```
+
+ثم:
+
+```bash
+cd azzedine-fish-manager
+```
+
+### 2. إنشاء بيئة افتراضية
+
+```bash
+python -m venv venv
+```
+
+في Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+### 3. تثبيت المكتبات
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. تشغيل البرنامج
+
+```bash
+python main.py
+```
+
+---
+
+## 📦 المكتبات الأساسية
+
+مثال على ملف `requirements.txt`:
+
+```text
+customtkinter
+reportlab
+Pillow
+```
+
+قاعدة بيانات **SQLite** مدمجة مع Python ولا تحتاج إلى تثبيت منفصل.
+
+---
+
+## 🧾 نظام الفواتير
+
+يسمح البرنامج بإنشاء فواتير احترافية تحتوي على معلومات الزبون والأسماك والكميات والأوزان والأسعار والإجمالي.
+
+كما يمكن إنشاء نسخة **PDF** من الفاتورة باستخدام ReportLab لتسهيل طباعتها أو الاحتفاظ بها.
+
+---
+
+## 🐟 إدارة أنواع الأسماك
+
+لا يشترط إنشاء كل بضاعة كمنتج محفوظ مسبقًا.
+
+يمكن تسجيل البضاعة مباشرة عند وصولها، بينما تكون **أسماء أنواع الأسماك** متوفرة كاختيارات سريعة أثناء الإدخال.
+
+يمكن إضافة أو تعديل أو حذف هذه الأنواع من صفحة **الإعدادات**.
+
+---
+
+## 👥 الزبائن
+
+لكل زبون سجل خاص به، وعند فتح صفحة الزبون يمكن الاطلاع على جميع الفواتير والمعاملات المرتبطة به.
+
+---
+
+## 🗄️ قاعدة البيانات
+
+يستخدم المشروع **SQLite** لحفظ البيانات محليًا.
+
+```text
+database/fishstore.db
+```
+
+⚠️ يفضل عدم رفع قاعدة البيانات الحقيقية الخاصة بالمحل إلى GitHub إذا كانت تحتوي على بيانات زبائن أو معلومات تجارية.
+
+يمكن إضافتها إلى `.gitignore`:
+
+```gitignore
+database/fishstore.db
+*.db
+__pycache__/
+*.pyc
+venv/
+.env
+```
+
+---
+
+## 🔮 تطويرات مستقبلية
+
+* نظام تسجيل الدخول والصلاحيات
+* النسخ الاحتياطي والاستعادة
+* تصدير التقارير إلى Excel
+* إحصائيات ورسوم بيانية متقدمة
+* إدارة المصاريف والأرباح
+* دعم قارئ الباركود
+* إرسال الفواتير عبر WhatsApp
+* مزامنة البيانات بين عدة أجهزة
+* إنشاء نسخة تنفيذية Windows `.exe`
+
+---
+
+## 📸 Screenshots
+
+سيتم إضافة صور لواجهة البرنامج هنا.
+
+```text
+screenshots/
+├── dashboard.png
+├── invoice.png
+├── customers.png
+└── reports.png
+```
+
+---
+
+## 📄 License
+
+هذا المشروع مخصص حاليًا لإدارة **Azzedine Fish**.
+
+حقوق المشروع محفوظة لصاحب المشروع ما لم يتم تحديد ترخيص آخر.
+
+---
+
+## 🐟 Azzedine Fish
+
+**Fresh Fish • Simple Management • Better Business**
+
+Built with ❤️ using Python.
